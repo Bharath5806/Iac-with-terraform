@@ -145,6 +145,9 @@ docker_image.nginx: Destruction complete after 0s
 Destroy complete! Resources: 2 destroyed.
 
 we will get access as
+
+
+
 ![images](https://github.com/user-attachments/assets/cd9622eb-814a-4860-87c0-d52ffaa950cb)
 
 
