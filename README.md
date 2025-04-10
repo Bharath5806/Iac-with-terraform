@@ -11,7 +11,7 @@ Prerequisites
 
 
 
-=>Directory: Create a new folder (e.g., cd ~/Desktop && mkdir terraform-docker && cd terraform-docker).
+=>Directory: Create a new folder (e.g mkdir terraform-docker).
 Step 1: Create the main.tf File
 
 In our working directory (terraform-docker), create a file named main.tf using a text editor (Notepad).
@@ -21,20 +21,19 @@ terraform {
   required_providers {
     docker = {
       source  = "kreuzwerker/docker"
-      version = "~> 3.0" # Compatible version as of April 2025
+      version = "~> 3.0" 
     }
   }
 }
 
 # Docker provider configuration
 provider "docker" {
-  host = "unix:///var/run/docker.sock" # For Linux/Mac; use "npipe:////./pipe/docker_engine" for Windows
+  host = "unix:///var/run/docker.sock"
 }
 
 # Define a Docker image
 resource "docker_image" "nginx" {
   name         = "nginx:latest"
-  keep_locally = true # Keeps the image after destroy
 }
 
 # Define a Docker container
@@ -43,7 +42,7 @@ resource "docker_container" "nginx_container" {
   image = docker_image.nginx.name
   ports {
     internal = 80
-    external = 8080 # Maps host port 8080 to container port 80
+    external = 8080 
   }
 }
 
