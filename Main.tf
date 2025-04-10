@@ -11,6 +11,7 @@ provider "docker" {
 resource "docker_image" "nginx" {
   name         = "nginx:latest"
   keep_locally = false
+ }
 }
 resource "docker_container" "nginx_container" {
   name  = "nginx-terraform"
