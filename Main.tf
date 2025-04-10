@@ -21,13 +21,3 @@ resource "docker_container" "nginx_container" {
     external = 8080
   }
 }
-
-output "container_id" {
-  description = "The ID of the created Docker container"
-  value       = docker_container.nginx_container.id
-}
-
-output "container_name" {
-  description = "Welcome to nginx"
-  value       = docker_container.nginx_container.name
-}
